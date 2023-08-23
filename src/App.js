@@ -5,6 +5,7 @@ import "./App.css";
 function App() {
   const [sport, setSport] = useLocalStorage("sport", "");
   const [player, setPlayer] = useState("");
+
   return (
     <>
       <label>Sport :</label>
@@ -17,7 +18,7 @@ function App() {
       <label>Player :</label>
       <input
         type="text"
-        value={player}
+        defaultValue={player}
         onChange={(event) => setPlayer(event.target.value)}
       />
     </>
