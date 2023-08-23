@@ -1,7 +1,27 @@
+import { useState } from "react";
+import useLocalStorage from "./useLocalStorage";
 import "./App.css";
 
 function App() {
-  return <div className="App"></div>;
+  const [sport, setSport] = useLocalStorage("sport", "");
+  const [player, setPlayer] = useState("");
+  return (
+    <>
+      <label>Sport :</label>
+      <input
+        type="text"
+        autoFocus
+        value={sport}
+        onChange={(event) => setSport(event.target.value)}
+      />
+      <label>Player :</label>
+      <input
+        type="text"
+        value={player}
+        onChange={(event) => setPlayer(event.target.value)}
+      />
+    </>
+  );
 }
 
 export default App;
